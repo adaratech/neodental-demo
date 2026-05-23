@@ -13,11 +13,12 @@ export default function Page() {
           Centro Maggiolini
         </p>
         <h1 className="text-[28px] font-extrabold leading-[1.1] text-text-primary mb-3 max-w-xs">
-          Il tuo percorso verso una bocca sana e duratura
+          Il dentista che non estrae finché c&apos;è qualcosa da salvare.
         </h1>
-        <p className="text-[15px] text-text-secondary max-w-xs">
-          Salviamo i tuoi denti il più a lungo possibile. Prima di ogni cura, lavoriamo in un campo
-          pulito.
+        <p className="text-[15px] text-text-secondary max-w-sm">
+          Il nostro protocollo inizia sempre con il campo pulito: due sedute di igiene profonda
+          prima di qualsiasi cura. Non è un optional. È il motivo per cui i nostri risultati
+          durano.
         </p>
       </div>
 

@@ -10,7 +10,7 @@ type Msg = { role: "aria" | "user"; text: string };
 const WELCOME: Msg = {
   role: "aria",
   text:
-    "Ciao Raffaello! Sono Aria, l'assistente del Centro Maggiolini. Conosco il tuo percorso e posso rispondere alle domande più comuni. Per qualsiasi cosa urgente, il numero del centro è sempre qui.",
+    "Ciao Raffaello. Sono Aria — conosco il tuo percorso al Centro Maggiolini. Hai una domanda su RIO 1, sul campo pulito o su come prepararti? Sono qui.",
 };
 
 const FALLBACK =

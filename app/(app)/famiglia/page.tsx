@@ -10,8 +10,9 @@ export default function FamigliaPage() {
 
       <section className="px-5 mt-2 mb-4">
         <p className="text-[14px] text-text-secondary leading-relaxed">
-          Sei il referente per <span className="font-semibold text-text-primary">{family.length} percorsi</span>.
-          Gestisci da qui i tuoi familiari e il tuo percorso.
+          Hai portato tutta la famiglia al centro. Da qui segui{" "}
+          <span className="font-semibold text-text-primary">{family.length} percorsi</span> — il
+          tuo e quello dei tuoi figli.
         </p>
       </section>
 

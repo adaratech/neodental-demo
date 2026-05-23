@@ -133,11 +133,11 @@ export default function AgendaPage() {
       <section className="px-5 mb-8">
         <div className="rounded-2xl bg-teal-light/40 border border-teal-mid/30 p-4">
           <p className="text-[10px] font-bold uppercase tracking-wider text-teal-primary-strong mb-1">
-            Vuoi la tua igienista?
+            Vuoi tornare dalla Dott.ssa Ferrari?
           </p>
           <p className="text-[13px] text-text-primary leading-relaxed">
-            La prima disponibilità del centro non vincola al medico. Se vuoi mantenere la stessa
-            Dott.ssa Ferrari, chiama il centro al 02 1234 5678.
+            Il tasto sopra prenota la prima disponibilità libera. Per scegliere l&apos;igienista,
+            chiama il centro al 02 1234 5678.
           </p>
         </div>
       </section>

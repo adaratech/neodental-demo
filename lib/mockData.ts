@@ -98,7 +98,7 @@ export const phases: Phase[] = [
     checklist: [
       { id: "ck01", label: "Porta le radiografie precedenti, se ne hai", completed: true },
       { id: "ck02", label: "Segnala eventuali allergie note", completed: true },
-      { id: "ck03", label: "Scrivi le domande che vuoi fare al dottore", completed: true },
+      { id: "ck03", label: "Hai dubbi? Scrivili adesso — il dottore ha tempo per rispondere a tutto", completed: true },
     ],
   },
   {
@@ -112,7 +112,7 @@ export const phases: Phase[] = [
     time: "09:30",
     operator: "Dott. L. Maggiolini",
     location: "Studio 1",
-    hero: "Diagnosi completata. Il dottore ha definito il tuo piano terapeutico personalizzato.",
+    hero: "Diagnosi fatta. Il Dott. Maggiolini ha visto i tuoi denti uno per uno — adesso sai esattamente cosa c'è, in che ordine lo affrontiamo e perché.",
     contents: [
       {
         id: "c11",
@@ -262,7 +262,7 @@ export const phases: Phase[] = [
     subtitle: "Cura della zona trattata",
     iconKey: "bandage",
     state: "locked",
-    hero: "Ottimo lavoro. Il tuo dente ha bisogno di qualche ora per adattarsi. Segui le istruzioni.",
+    hero: "Fatto. Nelle prossime 24 ore il dente si assesta — è normale. Ecco esattamente cosa fare e cosa no.",
     contents: [
       {
         id: "c61",
@@ -385,7 +385,7 @@ export const ariaFaqs: { question: string; answer: string }[] = [
   {
     question: "Perché serve RIO 1?",
     answer:
-      "Prima di otturare, ricostruire o trattare qualsiasi dente, la bocca deve essere in condizioni ottimali. È come cucinare con pentole pulite: il risultato è migliore. RIO 1 e RIO 2 puliscono in profondità il terreno su cui lavoreremo. Non tutti i centri lo fanno. Noi sì, sempre.",
+      "Immagina di otturare un dente su una gengiva infiammata: stai costruendo su fondamenta mosse. Il lavoro che fai non dura. Noi partiamo sempre da un terreno pulito — RIO 1 e RIO 2 servono esattamente a questo. Non tutti lo fanno. Noi sì, senza eccezioni.",
   },
   {
     question: "Sentirò dolore durante RIO 1?",
@@ -433,11 +433,11 @@ export const kidPhases = [
       "La Dottoressa Stella guarderà i tuoi denti con uno specchietto magico e ti spiegherà come tenerli forti e bianchi!",
     tips: [
       "Porta solo il tuo sorriso",
-      "Ti spiegheremo tutto prima di toccare i tuoi denti",
+      "Prima di cominciare, la Dottoressa Stella ti fa vedere tutto — niente sorprese!",
       "Puoi fare tutte le domande che vuoi",
     ],
     fear:
-      "Hai paura? È normalissimo. Anche Lorenzo (un bambino come te) aveva un po' di paura prima della prima visita. Poi mi ha detto che era stato divertente.",
+      "Hai paura? È normalissimo. Anche Marco (9 anni, è venuto qui due settimane fa) aveva un po' di paura prima della prima visita. Poi mi ha detto che era stato divertente.",
   },
   {
     id: "kid-grande-pulizia",
@@ -448,7 +448,7 @@ export const kidPhases = [
     intro:
       "Useremo un piccolo strumento che vibra e pulisce i tuoi denti meglio dello spazzolino. Sentirai un po' di solletico!",
     tips: [
-      "Niente aghi, niente di tutto questo",
+      "Uno strumento che vibra come uno spazzolino super-potente",
       "Solo acqua, un pennello speciale e una pasta dolce",
       "Dura solo 30 minuti",
     ],
