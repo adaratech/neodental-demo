@@ -110,12 +110,14 @@ export default function AgendaPage() {
                       href={whatsappLink(e.title)}
                       target="_blank"
                       rel="noreferrer"
+                      aria-label={`Prenota su WhatsApp: ${e.title}`}
                       className="flex-1 bg-teal-primary text-white text-[13px] font-semibold rounded-xl py-2.5 text-center active:scale-[0.98] transition-transform"
                     >
                       Prenota su WhatsApp
                     </a>
                     <button
                       type="button"
+                      aria-label={`Sposta appuntamento: ${e.title}`}
                       className="flex-1 bg-white border border-border-strong text-text-primary text-[13px] font-semibold rounded-xl py-2.5"
                     >
                       Sposta

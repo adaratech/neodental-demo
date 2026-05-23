@@ -24,7 +24,7 @@ export default function Page() {
       <div className="flex flex-col gap-3 mt-10">
         <Link
           href="/onboarding"
-          className="w-full bg-teal-primary text-white font-semibold text-[16px] rounded-2xl py-4 text-center shadow-[var(--shadow-card-strong)] active:scale-[0.98] transition-transform"
+          className="w-full bg-teal-primary text-white font-semibold text-[16px] rounded-2xl py-4 text-center shadow-[var(--shadow-card-strong)] active:scale-[0.98] transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-primary"
         >
           Inizia il percorso
         </Link>

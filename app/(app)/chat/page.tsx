@@ -54,10 +54,10 @@ export default function ChatPage() {
   const remainingChips = ariaFaqs.filter((f) => !used.has(f.question)).slice(0, 4);
 
   return (
-    <>
+    <div className="flex flex-col h-[100dvh]">
       <HeaderBar variant="back" title="Aria" subtitle="Assistente · Centro Maggiolini" />
 
-      <div ref={scrollRef} className="px-4 pb-4 space-y-3 overflow-y-auto">
+      <div ref={scrollRef} className="flex-1 min-h-0 px-4 pb-4 space-y-3 overflow-y-auto" role="log" aria-live="polite" aria-label="Conversazione con Aria">
         {msgs.map((m, i) => (
           <div
             key={i}
@@ -67,7 +67,7 @@ export default function ChatPage() {
             )}
           >
             {m.role === "aria" && (
-              <div className="w-8 h-8 rounded-full bg-teal-primary text-white flex items-center justify-center text-[13px] font-bold shrink-0">
+              <div aria-hidden="true" className="w-8 h-8 rounded-full bg-teal-primary text-white flex items-center justify-center text-[13px] font-bold shrink-0">
                 A
               </div>
             )}
@@ -96,7 +96,7 @@ export default function ChatPage() {
                 key={f.question}
                 type="button"
                 onClick={() => ask(f.question)}
-                className="shrink-0 bg-teal-light text-teal-primary-strong text-[13px] font-semibold px-3 py-2 rounded-full border border-teal-mid/20 active:scale-95 transition-transform"
+                className="shrink-0 bg-teal-light text-teal-primary-strong text-[13px] font-semibold px-3 py-2 min-h-[44px] rounded-full border border-teal-mid/20 active:scale-95 transition-transform"
               >
                 {f.question}
               </button>
@@ -107,20 +107,21 @@ export default function ChatPage() {
 
       <form
         onSubmit={submit}
-        className="sticky bottom-[calc(env(safe-area-inset-bottom)+76px)] px-4 pb-2 bg-gradient-to-t from-enamel-warm via-enamel-warm to-transparent pt-3"
+        className="shrink-0 px-4 pb-[calc(env(safe-area-inset-bottom)+84px)] pt-3 bg-gradient-to-t from-enamel-warm via-enamel-warm to-transparent"
       >
         <div className="flex items-center gap-2 bg-white border border-border-soft rounded-full px-4 py-1.5 shadow-sm">
           <input
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Scrivi la tua domanda..."
+            aria-label="Scrivi la tua domanda ad Aria"
             className="flex-1 bg-transparent outline-none text-[14px] py-2 placeholder:text-text-tertiary"
           />
           <button
             type="submit"
             disabled={!input.trim()}
-            className="w-9 h-9 rounded-full bg-teal-primary text-white flex items-center justify-center disabled:opacity-40 transition-opacity"
-            aria-label="Invia"
+            className="w-9 h-9 rounded-full bg-teal-primary text-white flex items-center justify-center disabled:opacity-40 transition-opacity focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-primary"
+            aria-label="Invia messaggio"
           >
             <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5">
               <path
@@ -134,6 +135,6 @@ export default function ChatPage() {
           Aria risponde solo dalla knowledge base del centro
         </p>
       </form>
-    </>
+    </div>
   );
 }

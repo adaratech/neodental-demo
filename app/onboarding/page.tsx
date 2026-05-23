@@ -59,29 +59,31 @@ export default function Onboarding() {
           {slide.illustration === "conservative" && (
             <div className="relative w-full max-w-[260px] aspect-square">
               <div className="absolute inset-0 bg-teal-light rounded-[40px]" />
-              <svg viewBox="0 0 200 200" className="absolute inset-0 w-full h-full p-10">
+              <svg viewBox="0 0 200 200" className="absolute inset-0 w-full h-full p-10 text-teal-primary" aria-hidden="true">
                 <path
                   d="M100 30c-26 0-44 16-44 42 0 18 8 36 14 56 4 14 8 32 18 32 8 0 8-16 12-16s4 16 12 16c10 0 14-18 18-32 6-20 14-38 14-56 0-26-18-42-44-42z"
                   fill="white"
-                  stroke="#0F7EA6"
+                  stroke="currentColor"
                   strokeWidth="3"
                 />
                 <path
                   d="M100 60v80"
-                  stroke="#0F7EA6"
+                  stroke="currentColor"
                   strokeWidth="3"
                   strokeDasharray="0"
                   strokeLinecap="round"
                 />
-                <circle cx="100" cy="100" r="36" fill="none" stroke="#2E9E6B" strokeWidth="3" />
-                <path
-                  d="M88 100l8 8 16-16"
-                  stroke="#2E9E6B"
-                  strokeWidth="4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  fill="none"
-                />
+                <g className="text-success">
+                  <circle cx="100" cy="100" r="36" fill="none" stroke="currentColor" strokeWidth="3" />
+                  <path
+                    d="M88 100l8 8 16-16"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    fill="none"
+                  />
+                </g>
               </svg>
             </div>
           )}
@@ -100,7 +102,7 @@ export default function Onboarding() {
                     <svg viewBox="0 0 24 24" className="w-3/4 h-3/4">
                       <path
                         d="M12 4c-3 0-5 1-5 4 0 2 1 4 1.5 6 .5 1.5 1 3 2 3 .8 0 .8-1.5 1.5-1.5s.7 1.5 1.5 1.5c1 0 1.5-1.5 2-3 .5-2 1.5-4 1.5-6 0-3-2-4-5-4z"
-                        fill={i === 5 ? "#E8603C" : "#4AABB8"}
+                        fill={i === 5 ? "var(--coral)" : "var(--teal-mid)"}
                         opacity={i === 5 ? "1" : "0.7"}
                       />
                     </svg>
@@ -124,7 +126,11 @@ export default function Onboarding() {
           <p className="text-[12px] font-bold uppercase tracking-[0.15em] text-teal-primary mb-2">
             {slide.eyebrow}
           </p>
-          <h2 className="text-[24px] font-extrabold leading-tight text-text-primary mb-3">
+          <h2
+            className="text-[24px] font-extrabold leading-tight text-text-primary mb-3"
+            aria-live="polite"
+            aria-atomic="true"
+          >
             {slide.title}
           </h2>
           <p className="text-[15px] text-text-secondary leading-relaxed max-w-sm mx-auto">
@@ -134,10 +140,13 @@ export default function Onboarding() {
       </div>
 
       <div className="flex flex-col gap-4">
-        <div className="flex justify-center gap-1.5">
+        <div className="flex justify-center gap-1.5" role="tablist" aria-label="Passaggi onboarding">
           {slides.map((_, i) => (
             <span
               key={i}
+              role="tab"
+              aria-selected={i === step}
+              aria-label={`Passaggio ${i + 1} di ${slides.length}`}
               className={cn(
                 "h-2 rounded-full transition-all",
                 i === step ? "w-6 bg-teal-primary" : "w-2 bg-border-strong",
@@ -148,7 +157,7 @@ export default function Onboarding() {
         <button
           type="button"
           onClick={next}
-          className="w-full bg-teal-primary text-white font-semibold text-[16px] rounded-2xl py-4 shadow-[var(--shadow-card-strong)] active:scale-[0.98] transition-transform"
+          className="w-full bg-teal-primary text-white font-semibold text-[16px] rounded-2xl py-4 shadow-[var(--shadow-card-strong)] active:scale-[0.98] transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-primary"
         >
           {step === total - 1 ? "Entra nel tuo percorso" : "Avanti"}
         </button>

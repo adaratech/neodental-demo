@@ -76,7 +76,7 @@ export default function FamigliaPage() {
       <section className="px-5 mb-8">
         <button
           type="button"
-          className="w-full rounded-2xl border-2 border-dashed border-border-strong bg-white/40 p-4 flex items-center gap-3 active:scale-[0.99] transition-transform"
+          className="w-full rounded-2xl border-2 border-dashed border-border-strong bg-white/40 p-4 flex items-center gap-3 active:scale-[0.99] transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-primary"
         >
           <div className="w-11 h-11 rounded-full bg-teal-light text-teal-primary-strong flex items-center justify-center text-2xl font-bold">
             +

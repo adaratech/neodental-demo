@@ -3,7 +3,7 @@ import { cn } from "@/lib/cn";
 const TONE = {
   teal: "bg-teal-light text-teal-primary-strong",
   coral: "bg-coral/15 text-coral",
-  purple: "bg-[#EBE3FE] text-[#8B6BF7]",
+  purple: "bg-kid-purple/20 text-kid-purple",
   green: "bg-success/15 text-success",
 };
 
@@ -32,6 +32,7 @@ export function Avatar({ name, age, tone, size = "md" }: Props) {
 
   return (
     <div
+      aria-hidden="true"
       className={cn(
         "rounded-full flex items-center justify-center font-bold shrink-0",
         TONE[tone],

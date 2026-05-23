@@ -10,14 +10,14 @@ export default async function KidHome({ params }: { params: Params }) {
   const currentLevel = 1;
 
   return (
-    <main className="pb-12">
+    <main className="pb-[calc(env(safe-area-inset-bottom)+24px)]">
       <header className="px-5 pt-[calc(env(safe-area-inset-top)+16px)] pb-3 flex items-center justify-between">
         <Link
           href="/famiglia"
           className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center"
           aria-label="Indietro"
         >
-          <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5">
+          <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5" aria-hidden="true">
             <path
               d="M15 6l-6 6 6 6"
               stroke="currentColor"
@@ -73,26 +73,37 @@ export default async function KidHome({ params }: { params: Params }) {
         <p className="text-[10px] font-extrabold uppercase tracking-wider opacity-60 mb-2 px-1">
           Il tuo percorso
         </p>
-        <div className="flex items-center justify-between bg-white rounded-2xl p-4 shadow-md">
+        <div
+          className="flex items-center justify-between bg-white rounded-2xl p-4 shadow-md"
+          role="list"
+          aria-label="Livelli del percorso"
+        >
           {Array.from({ length: 8 }).map((_, i) => {
             const unlocked = i < currentLevel + 2;
             const isCurrent = i === currentLevel;
+            const levelState = isCurrent ? "corrente" : i < currentLevel ? "completato" : unlocked ? "disponibile" : "bloccato";
             return (
-              <div key={i} className="flex flex-col items-center">
+              <div
+                key={i}
+                className="flex flex-col items-center"
+                role="listitem"
+                aria-label={`Livello ${i + 1}, ${levelState}`}
+              >
                 <div
+                  aria-hidden="true"
                   className="w-9 h-9 rounded-full flex items-center justify-center text-lg"
                   style={{
                     background: unlocked
                       ? isCurrent
                         ? "var(--kid-orange)"
                         : "var(--kid-sky)"
-                      : "#F1F2F5",
-                    color: unlocked ? "white" : "#C0C7CF",
+                      : "var(--enamel-warm)",
+                    color: unlocked ? "white" : "var(--text-tertiary)",
                   }}
                 >
                   {unlocked ? (i < currentLevel ? "⭐" : isCurrent ? "🦷" : "✨") : "🔒"}
                 </div>
-                <span className="text-[10px] font-bold mt-1 opacity-70">L{i + 1}</span>
+                <span className="text-[10px] font-bold mt-1 opacity-70" aria-hidden="true">L{i + 1}</span>
               </div>
             );
           })}

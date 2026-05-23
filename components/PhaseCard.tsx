@@ -24,7 +24,9 @@ export function PhaseCard({ phase, index }: Props) {
   return (
     <Link
       href={isLocked ? "#" : (`/journey/fase/${phase.id}` as const)}
-      aria-disabled={isLocked}
+      aria-disabled={isLocked ? "true" : undefined}
+      tabIndex={isLocked ? -1 : undefined}
+      aria-label={`${phase.label}${isLocked ? ", non ancora disponibile" : ""}`}
       className={cn(
         "block rounded-2xl border transition-transform active:scale-[0.98]",
         "p-4 flex gap-3 items-center",

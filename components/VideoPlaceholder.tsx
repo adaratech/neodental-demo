@@ -10,7 +10,8 @@ export function VideoPlaceholder({ title, subtitle, durationLabel = "90 sec" }: 
   return (
     <button
       type="button"
-      className="relative w-full rounded-2xl overflow-hidden text-left aspect-video bg-gradient-to-br from-teal-primary to-teal-primary-strong active:scale-[0.99] transition-transform"
+      aria-label={`Riproduci video: ${title}${durationLabel ? ` (${durationLabel})` : ""}`}
+      className="relative w-full rounded-2xl overflow-hidden text-left aspect-video bg-gradient-to-br from-teal-primary to-teal-primary-strong active:scale-[0.99] transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
     >
       <div className="absolute inset-0 opacity-20">
         <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full">

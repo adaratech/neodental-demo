@@ -17,6 +17,8 @@ export function Checklist({ items, theme = "adult" }: { items: ChecklistItem[]; 
           <li key={item.id}>
             <button
               type="button"
+              aria-pressed={done}
+              aria-label={`${item.label}${done ? ", completato" : ""}`}
               onClick={() => setState((s) => ({ ...s, [item.id]: !s[item.id] }))}
               className={cn(
                 "w-full flex items-center gap-3 rounded-xl p-3 text-left transition-colors",

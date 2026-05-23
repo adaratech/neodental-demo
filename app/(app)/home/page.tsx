@@ -21,7 +21,7 @@ export default function HomePage() {
         </h1>
       </section>
 
-      <section className="px-5 mt-5 space-y-3">
+      <section className="px-5 mt-5 space-y-3" aria-label="Stato del percorso">
         {current && (
           <NotificationBanner
             tone="today"
@@ -32,15 +32,23 @@ export default function HomePage() {
 
         <div className="rounded-2xl bg-white border border-border-soft p-4">
           <div className="flex items-center justify-between mb-3">
-            <p className="text-[10px] font-bold uppercase tracking-wider text-text-tertiary">
+            <p className="text-[10px] font-bold uppercase tracking-wider text-text-tertiary" id="percorso-label">
               Il tuo percorso
             </p>
-            <p className="text-[12px] font-semibold text-teal-primary-strong">
+            <p className="text-[12px] font-semibold text-teal-primary-strong" aria-live="polite">
               {completed} di {total}
             </p>
           </div>
-          <div className="flex gap-1.5 mb-3">
-            {phases.map((p, i) => (
+          <div
+            role="progressbar"
+            aria-valuenow={completed}
+            aria-valuemin={0}
+            aria-valuemax={total}
+            aria-labelledby="percorso-label"
+            aria-valuetext={`${completed} fasi completate su ${total}`}
+            className="flex gap-1.5 mb-3"
+          >
+            {phases.map((p) => (
               <span
                 key={p.id}
                 className={
@@ -52,7 +60,7 @@ export default function HomePage() {
                         ? "flex-1 h-1.5 rounded-full bg-teal-mid/50"
                         : "flex-1 h-1.5 rounded-full bg-border-soft"
                 }
-                aria-label={`Fase ${i + 1} ${p.state}`}
+                aria-hidden="true"
               />
             ))}
           </div>
@@ -66,7 +74,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="px-5 mt-6">
+      <section className="px-5 mt-6" aria-label="Fasi del percorso">
         <h2 className="text-[12px] font-bold uppercase tracking-wider text-text-tertiary mb-3 px-1">
           Fasi del percorso
         </h2>

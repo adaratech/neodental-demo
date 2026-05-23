@@ -13,7 +13,7 @@ export function NotificationBanner({ title, body, tone = "info" }: Props) {
   return (
     <div className={`rounded-2xl border px-4 py-3 ${map[tone]}`}>
       <div className="flex items-start gap-3">
-        <span className="text-xl shrink-0 leading-none mt-0.5">
+        <span className="text-xl shrink-0 leading-none mt-0.5" aria-hidden="true">
           {tone === "warning" ? "⚠️" : "🔔"}
         </span>
         <div className="flex-1">

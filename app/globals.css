@@ -145,3 +145,11 @@ body {
 .float-slow {
   animation: float-slow 4s ease-in-out infinite;
 }
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .pulse-today,
+  .float-slow {
+    animation: none;
+  }
+}
