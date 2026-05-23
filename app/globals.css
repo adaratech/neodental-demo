@@ -1,26 +1,147 @@
 @import "tailwindcss";
 
+/* ============================================================
+   Centro Maggiolini — Design System
+   Adulti: teal #0F7EA6 — smalto/poltrona odontoiatrica
+   Bambini: azzurro tenue + arancione — cartoon Disney/Pixar
+   ============================================================ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --enamel: #ffffff;
+  --enamel-warm: #f8f9fa;
+  --teal-primary: #0f7ea6;
+  --teal-primary-strong: #0a6786;
+  --teal-light: #e8f4f8;
+  --teal-mid: #4aabb8;
+  --teal-shadow: rgba(15, 126, 166, 0.12);
+  --coral: #e8603c;
+  --gum-pink: #f2c4b8;
+  --text-primary: #1a2733;
+  --text-secondary: #5a7080;
+  --text-tertiary: #93a3b0;
+  --success: #2e9e6b;
+  --warning: #f0a500;
+  --border-soft: #e6ebef;
+  --border-strong: #c9d4dc;
+
+  --kid-sky: #b8e4f0;
+  --kid-sky-light: #eaf7fc;
+  --kid-orange: #f5a623;
+  --kid-orange-light: #fdefd4;
+  --kid-purple: #a78bfa;
+  --kid-green: #6eca8f;
+  --kid-text: #2d3a4a;
+
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  --shadow-card: 0 1px 3px rgba(15, 39, 51, 0.04), 0 2px 8px rgba(15, 39, 51, 0.04);
+  --shadow-card-strong: 0 4px 12px rgba(15, 126, 166, 0.16);
+  --shadow-bottom-nav: 0 -1px 0 var(--border-soft), 0 -8px 24px rgba(15, 39, 51, 0.05);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-enamel: var(--enamel);
+  --color-enamel-warm: var(--enamel-warm);
+  --color-teal-primary: var(--teal-primary);
+  --color-teal-primary-strong: var(--teal-primary-strong);
+  --color-teal-light: var(--teal-light);
+  --color-teal-mid: var(--teal-mid);
+  --color-coral: var(--coral);
+  --color-gum-pink: var(--gum-pink);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-border-soft: var(--border-soft);
+  --color-border-strong: var(--border-strong);
+
+  --color-kid-sky: var(--kid-sky);
+  --color-kid-sky-light: var(--kid-sky-light);
+  --color-kid-orange: var(--kid-orange);
+  --color-kid-orange-light: var(--kid-orange-light);
+  --color-kid-purple: var(--kid-purple);
+  --color-kid-green: var(--kid-green);
+  --color-kid-text: var(--kid-text);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+
+  --font-sans: var(--font-jakarta), var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-jakarta), system-ui, sans-serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
+  --font-kid: var(--font-nunito), system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  background: var(--enamel-warm);
+  color: var(--text-primary);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100dvh;
+  overscroll-behavior-y: none;
+}
+
+/* Mobile-first viewport — clamp app to phone width even on desktop */
+.app-frame {
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  background: var(--enamel-warm);
+  position: relative;
+  box-shadow: 0 0 0 1px var(--border-soft);
+}
+
+@media (min-width: 640px) {
+  .app-frame {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    min-height: calc(100dvh - 48px);
+    border-radius: 36px;
+    overflow: hidden;
+    box-shadow:
+      0 24px 48px rgba(15, 39, 51, 0.12),
+      0 0 0 1px var(--border-soft);
+  }
+}
+
+/* Hide scrollbars for horizontal lists, keep them functional */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Subtle pulse for active "today" state */
+@keyframes pulse-soft {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(15, 126, 166, 0.35); }
+  50% { box-shadow: 0 0 0 6px rgba(15, 126, 166, 0); }
+}
+.pulse-today {
+  animation: pulse-soft 2.4s ease-out infinite;
+}
+
+/* Kid theme floating animation */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.float-slow {
+  animation: float-slow 4s ease-in-out infinite;
 }
