@@ -25,7 +25,7 @@ const nunito = Nunito({
 
 export const metadata: Metadata = {
   title: "Centro Maggiolini",
-  description: "Il tuo percorso verso una bocca sana e duratura.",
+  description: "Il dentista che non estrae finché c'è qualcosa da salvare.",
   manifest: "/manifest.webmanifest",
   appleWebApp: {
     capable: true,
