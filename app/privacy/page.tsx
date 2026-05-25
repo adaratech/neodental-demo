@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ToothLogo } from "@/components/icons/PhaseIcon";
+import Image from "next/image";
 
 export const metadata = {
   title: "Informativa privacy · Tiziano Odontoiatria",
@@ -24,8 +24,8 @@ export default function PrivacyPage() {
             />
           </svg>
         </Link>
-        <div className="flex items-center gap-2 text-teal-primary">
-          <ToothLogo className="w-6 h-6" />
+        <div className="flex items-center gap-2">
+          <Image src="/brand-mark.png" alt="" aria-hidden="true" width={24} height={24} />
           <span className="font-bold text-[13px] text-text-primary">Tiziano Odontoiatria</span>
         </div>
       </header>

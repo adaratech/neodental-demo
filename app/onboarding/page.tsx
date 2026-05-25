@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { ToothLogo } from "@/components/icons/PhaseIcon";
+import Image from "next/image";
 import { VideoPlaceholder } from "@/components/VideoPlaceholder";
 import { cn } from "@/lib/cn";
 
@@ -41,8 +41,8 @@ export default function Onboarding() {
   return (
     <main className="min-h-[100dvh] flex flex-col px-6 pt-[calc(env(safe-area-inset-top)+24px)] pb-[calc(env(safe-area-inset-bottom)+24px)] bg-gradient-to-b from-white to-teal-light/30">
       <div className="flex items-center justify-between mb-8">
-        <div className="flex items-center gap-2 text-teal-primary">
-          <ToothLogo className="w-7 h-7" />
+        <div className="flex items-center gap-2">
+          <Image src="/brand-mark.png" alt="" aria-hidden="true" width={28} height={28} />
           <span className="font-bold text-[14px] text-text-primary">Tiziano Odontoiatria</span>
         </div>
         <button

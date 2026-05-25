@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ToothLogo } from "./icons/PhaseIcon";
+import Image from "next/image";
 
 type Props = {
   variant?: "default" | "back";
@@ -41,8 +41,15 @@ export function HeaderBar({ variant = "default", title, subtitle, backHref = "/h
 
   return (
     <header className="px-5 pt-[calc(env(safe-area-inset-top)+16px)] pb-2 flex items-center justify-between">
-      <div className="flex items-center gap-2 text-teal-primary">
-        <ToothLogo className="w-7 h-7" />
+      <div className="flex items-center gap-2">
+        <Image
+          src="/brand-mark.png"
+          alt=""
+          width={32}
+          height={32}
+          aria-hidden="true"
+          className="shrink-0"
+        />
         <div>
           <p className="text-[15px] font-bold text-text-primary leading-tight">Tiziano Odontoiatria</p>
           <p className="text-[11px] text-text-tertiary leading-tight">Il tuo percorso di cura</p>
@@ -53,7 +60,7 @@ export function HeaderBar({ variant = "default", title, subtitle, backHref = "/h
         className="w-9 h-9 rounded-full bg-teal-light text-teal-primary flex items-center justify-center font-semibold text-[14px]"
         aria-label="Profilo"
       >
-        R
+        T
       </Link>
     </header>
   );

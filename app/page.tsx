@@ -1,13 +1,20 @@
 import Link from "next/link";
-import { ToothLogo } from "@/components/icons/PhaseIcon";
+import Image from "next/image";
 
 export default function Page() {
   return (
     <main className="min-h-[100dvh] flex flex-col justify-between px-6 pt-[calc(env(safe-area-inset-top)+48px)] pb-[calc(env(safe-area-inset-bottom)+32px)] bg-gradient-to-b from-white via-enamel-warm to-teal-light/40">
       <div />
       <div className="flex flex-col items-center text-center">
-        <div className="w-24 h-24 rounded-3xl bg-teal-primary text-white flex items-center justify-center shadow-[var(--shadow-card-strong)] mb-6">
-          <ToothLogo className="w-12 h-12" />
+        <div className="mb-6">
+          <Image
+            src="/brand-mark.png"
+            alt="Tiziano Odontoiatria"
+            width={112}
+            height={112}
+            priority
+            className="drop-shadow-[var(--shadow-card-strong)]"
+          />
         </div>
         <p className="text-[12px] font-bold uppercase tracking-[0.15em] text-teal-primary mb-2">
           Tiziano Odontoiatria
