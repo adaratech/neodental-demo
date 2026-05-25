@@ -32,7 +32,7 @@ export default async function KidHome({ params }: { params: Params }) {
             className="text-[11px] font-extrabold uppercase tracking-wider"
             style={{ color: "var(--kid-orange)" }}
           >
-            Centro Maggiolini · KIDS
+            Tiziano Odontoiatria · KIDS
           </p>
         </div>
         <div className="w-10" />
@@ -71,7 +71,7 @@ export default async function KidHome({ params }: { params: Params }) {
 
       <section className="px-5 mt-5">
         <p className="text-[10px] font-extrabold uppercase tracking-wider opacity-60 mb-2 px-1">
-          Il tuo percorso
+          Il tuo percorso di cura
         </p>
         <div
           className="flex items-center justify-between bg-white rounded-2xl p-4 shadow-md"

@@ -57,7 +57,7 @@ export type FamilyMember = {
 export const patient = {
   firstName: "Raffaello",
   lastName: "Bianchi",
-  centerName: "Centro Maggiolini",
+  centerName: "Tiziano Odontoiatria",
   centerSubtitle: "Centro odontoiatrico conservativo",
   currentPhase: "fase-2-rio1" as PhaseId,
 };
@@ -77,7 +77,7 @@ export const phases: Phase[] = [
         id: "c01",
         type: "video",
         title: "Il dottore ti spiega cosa succederà",
-        excerpt: "Il Dott. Maggiolini in 90 secondi: cosa aspettarti dalla prima visita.",
+        excerpt: "Il Dott. Tiziano in 90 secondi: cosa aspettarti dalla prima visita.",
         readingTime: 2,
       },
       {
@@ -110,9 +110,9 @@ export const phases: Phase[] = [
     state: "completed",
     date: "20 mag 2026",
     time: "09:30",
-    operator: "Dott. L. Maggiolini",
+    operator: "Dott. L. Tiziano",
     location: "Studio 1",
-    hero: "Diagnosi fatta. Il Dott. Maggiolini ha visto i tuoi denti uno per uno — adesso sai esattamente cosa c'è, in che ordine lo affrontiamo e perché.",
+    hero: "Diagnosi fatta. Il Dott. Tiziano ha visto i tuoi denti uno per uno — adesso sai esattamente cosa c'è, in che ordine lo affrontiamo e perché.",
     contents: [
       {
         id: "c11",
@@ -152,7 +152,7 @@ export const phases: Phase[] = [
         id: "c21",
         type: "video",
         title: "Cos'è RIO 1, in un minuto",
-        excerpt: "Il Dott. Maggiolini spiega perché RIO 1 viene prima di tutto il resto.",
+        excerpt: "Il Dott. Tiziano spiega perché RIO 1 viene prima di tutto il resto.",
         readingTime: 1,
       },
       {
@@ -313,7 +313,7 @@ export const phases: Phase[] = [
 export const family: FamilyMember[] = [
   {
     id: "raffaello",
-    name: "Raffaello (tu)",
+    name: "Tu",
     age: 42,
     relation: "Account titolare",
     status: "RIO 1 · oggi alle 10:30",
@@ -381,7 +381,7 @@ export type ChatMessage = {
   text: string;
 };
 
-export const ariaFaqs: { question: string; answer: string }[] = [
+export const sofiaFaqs: { question: string; answer: string }[] = [
   {
     question: "Perché serve RIO 1?",
     answer:
@@ -417,7 +417,7 @@ export const ariaFaqs: { question: string; answer: string }[] = [
 export const kidPatient = {
   firstName: "Lorenzo",
   age: 9,
-  centerName: "Centro Maggiolini",
+  centerName: "Tiziano Odontoiatria",
   level: 1,
   totalLevels: 8,
 };

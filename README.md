@@ -10,7 +10,7 @@ Una webapp mobile (PWA) che accompagna il paziente attraverso le 8 fasi del perc
 - Gestione famiglia inversa (un genitore titolare → più percorsi figli)
 - Sotto-journey "cartoon" per bambini con telefono proprio
 - Piano igiene annuale come agenda timeline + prenotazione WhatsApp
-- Agente virtuale "Aria" su knowledge base del centro
+- Agente virtuale "Sofia" su knowledge base del centro
 - Notifiche push web per ogni transizione di fase
 - Brand identity inequivocabilmente odontoiatrica (no celeste SSN generico)
 
@@ -39,7 +39,7 @@ npm run dev
 | `/journey/fase/[id]` | Dettaglio fase (8 fasi dinamiche) |
 | `/famiglia` | Gestione multi-paziente |
 | `/agenda` | Piano igiene annuale |
-| `/chat` | Aria — agente virtuale |
+| `/chat` | Sofia — agente virtuale |
 | `/kids/[id]` | Tema cartoon per bambini |
 
 ## Stato

@@ -15,7 +15,7 @@ export default function HomePage() {
       <HeaderBar />
 
       <section className="px-5 pt-3 pb-2">
-        <p className="text-[14px] text-text-secondary">Ciao, {patient.firstName}</p>
+        <p className="text-[14px] text-text-secondary">Ciao!</p>
         <h1 className="text-[24px] font-extrabold leading-tight text-text-primary">
           Oggi è il giorno del campo pulito.
         </h1>
@@ -33,7 +33,7 @@ export default function HomePage() {
         <div className="rounded-2xl bg-white border border-border-soft p-4">
           <div className="flex items-center justify-between mb-3">
             <p className="text-[10px] font-bold uppercase tracking-wider text-text-tertiary" id="percorso-label">
-              Il tuo percorso
+              Il tuo percorso di cura
             </p>
             <p className="text-[12px] font-semibold text-teal-primary-strong" aria-live="polite">
               {completed} di {total}
@@ -118,8 +118,8 @@ export default function HomePage() {
               <ChatIcon className="w-6 h-6" />
             </div>
             <div className="flex-1">
-              <p className="font-semibold text-[15px]">Parla con Aria</p>
-              <p className="text-[12px] text-white/80">L&apos;assistente del centro Maggiolini</p>
+              <p className="font-semibold text-[15px]">Parla con Sofia</p>
+              <p className="text-[12px] text-white/80">L&apos;assistente di Tiziano Odontoiatria</p>
             </div>
             <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5" aria-hidden>
               <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />

@@ -44,8 +44,8 @@ export function HeaderBar({ variant = "default", title, subtitle, backHref = "/h
       <div className="flex items-center gap-2 text-teal-primary">
         <ToothLogo className="w-7 h-7" />
         <div>
-          <p className="text-[15px] font-bold text-text-primary leading-tight">Centro Maggiolini</p>
-          <p className="text-[11px] text-text-tertiary leading-tight">Il tuo percorso</p>
+          <p className="text-[15px] font-bold text-text-primary leading-tight">Tiziano Odontoiatria</p>
+          <p className="text-[11px] text-text-tertiary leading-tight">Il tuo percorso di cura</p>
         </div>
       </div>
       <Link

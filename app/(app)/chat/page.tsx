@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { HeaderBar } from "@/components/HeaderBar";
-import { ariaFaqs } from "@/lib/mockData";
+import { sofiaFaqs } from "@/lib/mockData";
 import { cn } from "@/lib/cn";
 
 type Msg = { role: "aria" | "user"; text: string };
@@ -10,7 +10,7 @@ type Msg = { role: "aria" | "user"; text: string };
 const WELCOME: Msg = {
   role: "aria",
   text:
-    "Ciao Raffaello. Sono Aria — conosco il tuo percorso al Centro Maggiolini. Hai una domanda su RIO 1, sul campo pulito o su come prepararti? Sono qui.",
+    "Ciao! Sono Sofia — conosco il tuo percorso di cura a Tiziano Odontoiatria. Hai una domanda su RIO 1, sul campo pulito o su come prepararti? Sono qui.",
 };
 
 const FALLBACK =
@@ -27,7 +27,7 @@ export default function ChatPage() {
   }, [msgs]);
 
   const ask = (q: string) => {
-    const faq = ariaFaqs.find((f) => f.question === q);
+    const faq = sofiaFaqs.find((f) => f.question === q);
     setMsgs((m) => [
       ...m,
       { role: "user", text: q },
@@ -40,7 +40,7 @@ export default function ChatPage() {
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim()) return;
-    const match = ariaFaqs.find((f) =>
+    const match = sofiaFaqs.find((f) =>
       f.question.toLowerCase().includes(input.trim().toLowerCase().slice(0, 6)),
     );
     setMsgs((m) => [
@@ -51,13 +51,13 @@ export default function ChatPage() {
     setInput("");
   };
 
-  const remainingChips = ariaFaqs.filter((f) => !used.has(f.question)).slice(0, 4);
+  const remainingChips = sofiaFaqs.filter((f) => !used.has(f.question)).slice(0, 4);
 
   return (
     <div className="flex flex-col h-[100dvh]">
-      <HeaderBar variant="back" title="Aria" subtitle="Assistente · Centro Maggiolini" />
+      <HeaderBar variant="back" title="Sofia" subtitle="Assistente · Tiziano Odontoiatria" />
 
-      <div ref={scrollRef} className="flex-1 min-h-0 px-4 pb-4 space-y-3 overflow-y-auto" role="log" aria-live="polite" aria-label="Conversazione con Aria">
+      <div ref={scrollRef} className="flex-1 min-h-0 px-4 pb-4 space-y-3 overflow-y-auto" role="log" aria-live="polite" aria-label="Conversazione con Sofia">
         {msgs.map((m, i) => (
           <div
             key={i}
@@ -68,7 +68,7 @@ export default function ChatPage() {
           >
             {m.role === "aria" && (
               <div aria-hidden="true" className="w-8 h-8 rounded-full bg-teal-primary text-white flex items-center justify-center text-[13px] font-bold shrink-0">
-                A
+                S
               </div>
             )}
             <div
@@ -114,7 +114,7 @@ export default function ChatPage() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Scrivi la tua domanda..."
-            aria-label="Scrivi la tua domanda ad Aria"
+            aria-label="Scrivi la tua domanda a Sofia"
             className="flex-1 bg-transparent outline-none text-[14px] py-2 placeholder:text-text-tertiary"
           />
           <button
@@ -132,7 +132,7 @@ export default function ChatPage() {
           </button>
         </div>
         <p className="text-[10px] text-text-tertiary text-center mt-2">
-          Aria risponde solo dalla knowledge base del centro
+          Sofia risponde solo dalla knowledge base del centro
         </p>
       </form>
     </div>

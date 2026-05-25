@@ -10,7 +10,7 @@ export default function Page() {
           <ToothLogo className="w-12 h-12" />
         </div>
         <p className="text-[12px] font-bold uppercase tracking-[0.15em] text-teal-primary mb-2">
-          Centro Maggiolini
+          Tiziano Odontoiatria
         </p>
         <h1 className="text-[28px] font-extrabold leading-[1.1] text-text-primary mb-3 max-w-xs">
           Il dentista che non estrae finché c&apos;è qualcosa da salvare.
@@ -36,7 +36,10 @@ export default function Page() {
           Ho già un account →
         </Link>
         <p className="text-[11px] text-text-tertiary text-center mt-2">
-          PWA powered by Portale Salute · v0.1 demo
+          PWA powered by Portale Salute · v0.3 demo ·{" "}
+          <Link href="/privacy" className="underline">
+            Privacy
+          </Link>
         </p>
       </div>
     </main>

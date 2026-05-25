@@ -24,13 +24,13 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "Centro Maggiolini",
+  title: "Tiziano Odontoiatria",
   description: "Il dentista che non estrae finché c'è qualcosa da salvare.",
   manifest: "/manifest.webmanifest",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "Centro Maggiolini",
+    title: "Tiziano Odontoiatria",
   },
 };
 

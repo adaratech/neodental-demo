@@ -21,7 +21,7 @@ const slides = [
   },
   {
     eyebrow: "Il direttore sanitario",
-    title: "Ciao, sono Leonardo Maggiolini",
+    title: "Ciao, sono Leonardo Tiziano",
     body: "Voglio spiegarti in due minuti come ci prendiamo cura di te.",
     illustration: "video",
   },
@@ -43,7 +43,7 @@ export default function Onboarding() {
       <div className="flex items-center justify-between mb-8">
         <div className="flex items-center gap-2 text-teal-primary">
           <ToothLogo className="w-7 h-7" />
-          <span className="font-bold text-[14px] text-text-primary">Centro Maggiolini</span>
+          <span className="font-bold text-[14px] text-text-primary">Tiziano Odontoiatria</span>
         </div>
         <button
           type="button"
@@ -114,9 +114,10 @@ export default function Onboarding() {
           {slide.illustration === "video" && (
             <div className="w-full max-w-[320px]">
               <VideoPlaceholder
-                title="Conosci il Dott. Maggiolini"
+                title="Conosci il Dott. Leonardo"
                 subtitle="Il tuo direttore sanitario"
                 durationLabel="2 min"
+                videoUrl="/videos/dott-leonardo-intro.mp4"
               />
             </div>
           )}
@@ -159,8 +160,17 @@ export default function Onboarding() {
           onClick={next}
           className="w-full bg-teal-primary text-white font-semibold text-[16px] rounded-2xl py-4 shadow-[var(--shadow-card-strong)] active:scale-[0.98] transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-primary"
         >
-          {step === total - 1 ? "Entra nel tuo percorso" : "Avanti"}
+          {step === total - 1 ? "Entra nel tuo percorso di cura" : "Avanti"}
         </button>
+        {step === total - 1 && (
+          <p className="text-[11px] text-text-tertiary text-center">
+            Procedendo accetti il trattamento dei dati come descritto nella{" "}
+            <a href="/privacy" className="underline text-teal-primary">
+              informativa privacy
+            </a>
+            .
+          </p>
+        )}
       </div>
     </main>
   );

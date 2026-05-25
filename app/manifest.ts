@@ -2,10 +2,10 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Centro Maggiolini",
-    short_name: "Maggiolini",
+    name: "Tiziano Odontoiatria",
+    short_name: "Tiziano",
     description:
-      "Il tuo percorso verso una bocca sana e duratura. Centro odontoiatrico conservativo.",
+      "Il tuo percorso di cura verso una bocca sana e duratura. Centro odontoiatrico conservativo.",
     start_url: "/home",
     display: "standalone",
     background_color: "#F8F9FA",

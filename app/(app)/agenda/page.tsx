@@ -13,9 +13,9 @@ const STATUS = {
 
 function whatsappLink(eventTitle: string) {
   const text = encodeURIComponent(
-    `Ciao, sono Raffaello Bianchi, paziente del Dott. Maggiolini. Vorrei prenotare ${eventTitle}.`,
+    `Buongiorno, sono un paziente di Tiziano Odontoiatria. Vorrei prenotare ${eventTitle}.`,
   );
-  return `https://wa.me/393331234567?text=${text}`;
+  return `https://wa.me/393332033349?text=${text}`;
 }
 
 export default function AgendaPage() {
