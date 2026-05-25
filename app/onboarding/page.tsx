@@ -21,7 +21,7 @@ const slides = [
   },
   {
     eyebrow: "Il direttore sanitario",
-    title: "Ciao, sono Leonardo Tiziano",
+    title: "Ciao, sono Leonardo Maggiolini",
     body: "Voglio spiegarti in due minuti come ci prendiamo cura di te.",
     illustration: "video",
   },

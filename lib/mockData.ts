@@ -77,7 +77,7 @@ export const phases: Phase[] = [
         id: "c01",
         type: "video",
         title: "Il dottore ti spiega cosa succederà",
-        excerpt: "Il Dott. Tiziano in 90 secondi: cosa aspettarti dalla prima visita.",
+        excerpt: "Il Dott. Maggiolini in 90 secondi: cosa aspettarti dalla prima visita.",
         readingTime: 2,
       },
       {
@@ -110,9 +110,9 @@ export const phases: Phase[] = [
     state: "completed",
     date: "20 mag 2026",
     time: "09:30",
-    operator: "Dott. L. Tiziano",
+    operator: "Dott. L. Maggiolini",
     location: "Studio 1",
-    hero: "Diagnosi fatta. Il Dott. Tiziano ha visto i tuoi denti uno per uno — adesso sai esattamente cosa c'è, in che ordine lo affrontiamo e perché.",
+    hero: "Diagnosi fatta. Il Dott. Maggiolini ha visto i tuoi denti uno per uno — adesso sai esattamente cosa c'è, in che ordine lo affrontiamo e perché.",
     contents: [
       {
         id: "c11",
@@ -152,7 +152,7 @@ export const phases: Phase[] = [
         id: "c21",
         type: "video",
         title: "Cos'è RIO 1, in un minuto",
-        excerpt: "Il Dott. Tiziano spiega perché RIO 1 viene prima di tutto il resto.",
+        excerpt: "Il Dott. Maggiolini spiega perché RIO 1 viene prima di tutto il resto.",
         readingTime: 1,
       },
       {
